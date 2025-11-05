@@ -1,3 +1,6 @@
+// import dotenv from "dotenv";
+// dotenv.config();
+
 const themeToggle = document.querySelector(".theme-toggle");
 const promptForm = document.querySelector(".prompt-form");
 const promptInput = document.querySelector(".prompt-input");
@@ -8,7 +11,7 @@ const countSelect = document.getElementById("count-select");
 const ratioSelect = document.getElementById("ratio-select");
 const gridGallery = document.querySelector(".gallery-grid");
 
-const API_KEY = "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"; // hugging face API Key
+const API_KEY = "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"; // hugging face API Key
 
 const examplePrompts = [
     "A magic forest with glowing plants and fairy homes among giant mushrooms",
@@ -36,7 +39,7 @@ const examplePrompts = [
     const isDarkTheme = savedTheme === "dark" || (!savedTheme && systemPrefersDark);
     document.body.classList.toggle("dark-theme" , isDarkTheme);
 
-    themeToggle.querySelector("i"),className= isDarkTheme ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    themeToggle.querySelector("i").className= isDarkTheme ? "fa-solid fa-sun" : "fa-solid fa-moon";
 })();
 
 // Switch between light and dark themes
@@ -77,7 +80,7 @@ const updateImageCard = (imgIndex, imgUrl) => {
 
 //Send requests to Hugging Face API to create images
 const generateImages = async (selectedModel, imageCount, aspectRatio, promptText) => {
-    const MODEL_URL = `https://api-inference.huggingface.co/models/${selectedModel}`;
+    const MODEL_URL = `https://huggingface.co/${selectedModel}`;
     const {width, height} = getImageDimensions(aspectRatio);
     generateBtn.setAttribute("disabled", "true");
     // Create an array of image generation promises
