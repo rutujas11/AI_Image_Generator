@@ -46,7 +46,7 @@ const examplePrompts = [
 const toggleTheme = () => {
     const isDarkTheme = document.body.classList.toggle("dark-theme");
     localStorage.setItem("theme", isDarkTheme ? "dark" : "light");
-    themeToggle.querySelector("i").className = isDarkTheme ? "fa-solid fa-sun" : "fa-solid fa-moon"
+    themeToggle.querySelector("i").className = isDarkTheme ? "fa-solid fa-sun" : "fa-solid fa-moon";
 }
 
 //calculate width/height based on chosen ratio
